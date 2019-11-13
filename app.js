@@ -202,7 +202,26 @@ http.createServer((req, res) => {
 	switch (req.url) {
 		// Home
 		case '/':
-			res.end('Home');
+            let home = "Bienvenidos a DH Movies el mejor sitio para encontrar las mejores  películas, incluso mucho mejor que Netflix, Cuevana y PopCorn​." 
+
+            home += "\n"
+            home += "\n"
+
+            home += "Cantidad de peliculas en cartelera: "
+
+            home += movies.length
+
+            home += "\n"
+            home += "\n"
+
+            for (var i = 0; i < movies.length; i++){
+                home += movies[i].title + "\n";
+            }; 
+            
+            //Hay que hacer un For of
+
+
+			res.end(home);
 			break;
 		// En cartelera
 		case '/en-cartelera':
